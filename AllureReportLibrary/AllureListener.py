@@ -75,7 +75,8 @@ class AllureListener(object):
                                 'tags': [],
                                 'id': 's1-s1-t0',
                                 'longname': BuiltIn().get_variable_value('${SUITE_NAME}'),
-                                'template': ''
+                                'template': '',
+                                'severity': 'critical'
                                 }
  
         if len(str(start_test_attributes.get('doc'))) > 0:
@@ -105,6 +106,7 @@ class AllureListener(object):
                                 'id': 's1-s1-t0',
                                 'longname': BuiltIn().get_variable_value('${SUITE_NAME}'),
                                 'template': ''
+                                'severity': 'critical'
                                 }
 
         test = self.stack.pop()
