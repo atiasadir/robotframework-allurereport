@@ -119,6 +119,7 @@ class AllureListener(object):
             test.description = attributes.get('doc')
 
         if end_test_attributes['tags']:
+            attributes['tags'] += [ "critical" ]
             for tag in end_test_attributes['tags']:
                 if re.search(self.AllureIssueIdRegEx, tag):
                     test.labels.append(TestLabel(
@@ -138,7 +139,6 @@ class AllureListener(object):
                         value=tag))
                 elif tag in STATUSSES:
                     test.status = tag  # overwrites the actual test status with this value.
-           
 
         self.PabotPoolId =  BuiltIn().get_variable_value('${PABOTEXECUTIONPOOLID}')
         
@@ -189,6 +189,7 @@ class AllureListener(object):
             test.description = attributes.get('doc')
 
         if attributes['tags']:
+            attributes['tags'] += [ "critical" ]
             for tag in attributes['tags']:
                 if re.search(self.AllureIssueIdRegEx, tag):
                     test.labels.append(TestLabel(
