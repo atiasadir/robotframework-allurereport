@@ -75,6 +75,7 @@ class AllureListener(object):
                 start=now(),
                 attachments=[],
                 labels=[],
+                severity = 'critical',
 #                 parameters=[],
                 steps=[])
 
